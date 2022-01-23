@@ -12,14 +12,14 @@
  */
 
 typedef enum { PREORDER, INORDER, POSTORDER } traverse_order;
-typedef enum { LEFT, RIGHT } traverse_origin;
+typedef enum { LEFT=0, RIGHT=1 } traverse_origin;
 
 typedef struct node *TREE;
 
 struct node {
   char data;
   TREE left, right;
-  traverse_origin back;		/* one bit is enough */
+  traverse_origin back: 1;	/* 1 bit is enough */
 };
 
 TREE mknode(char c, TREE left, TREE right) {
@@ -76,7 +76,7 @@ void traverse(TREE p, traverse_order order, void (*F)()) {
 }
 
 void process(TREE p) {
-  printf("%c", p->data);
+  printf("%c ", p->data);
 }
 
 int main() {
