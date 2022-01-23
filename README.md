@@ -12,5 +12,4 @@ which is either `PREORDER`, `INORDER` or `POSTORDER`.
 
 `traverse` only requires one extra bit per node and runs in O(n)
 time and O(1) space, i.e., no stack is required.  Instead,
-tree pointers are flipped so that `traverse` can find the way back.
-
+tree pointers are flipped so that `traverse` can find its way back.
